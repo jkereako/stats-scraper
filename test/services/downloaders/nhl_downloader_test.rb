@@ -1,3 +1,4 @@
+require 'test_helper'
 require Rails.root.join('app', 'services', 'downloaders', 'nhl_downloader')
 
 class NHLDownloaderTest < ActiveSupport::TestCase
@@ -18,6 +19,18 @@ class NHLDownloaderTest < ActiveSupport::TestCase
     result.each do |file|
       assert_not_nil file
     end
+  end
+
+  test 'team roster download' do
+    assert_not_nil @downloader.team_roster team_identifier: @team_identifier
+  end
+
+  test 'team injuries download' do
+    assert_not_nil @downloader.team_injuries team_identifier: @team_identifier
+  end
+
+  test 'team transactions download' do
+    assert_not_nil @downloader.team_transactions team_identifier: @team_identifier
   end
 end
 

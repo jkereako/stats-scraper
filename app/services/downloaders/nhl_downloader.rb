@@ -23,4 +23,16 @@ class NHLDownloader
     schedules
   end
 
+  def team_roster(team_identifier:)
+    open team_roster_url league: 'nhl', team_identifier: team_identifier
+  end
+  
+  def team_injuries(team_identifier:)
+    open team_injuries_url league: 'nhl', team_identifier: team_identifier
+  end
+
+  def team_transactions(team_identifier:)
+    open team_transactions_url league: 'nhl', team_identifier: team_identifier
+  end
+
 end
