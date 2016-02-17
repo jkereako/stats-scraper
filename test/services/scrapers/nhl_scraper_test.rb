@@ -8,9 +8,12 @@ class NHLScraperTest < ActiveSupport::TestCase
   end
 
   test 'league standings' do
-    file_path = File.join @fixture_path, 'nhl-league-standings.html'
-    file = File.open file_path, 'r'
+    file = open_readonly_file path: @fixture_path,
+                              file_name: 'nhl-league-standings.html'
+
     result = @scraper.league_standings file: file
     assert_not_empty result
+
+    file.close
   end
 end

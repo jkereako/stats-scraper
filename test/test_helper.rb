@@ -6,5 +6,9 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
+  def open_readonly_file(path:, file_name:)
+    file_path = File.join path, file_name
+    File.open file_path, 'r'
+  end
   # Add more helper methods to be used by all tests here...
 end
