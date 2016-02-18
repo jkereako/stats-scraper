@@ -10,6 +10,9 @@ class NHLParserTest < ActiveSupport::TestCase
   test 'league standings text parsing' do
     file_path = File.join @fixture_path, 'nhl-league-standings.txt'
     text = File.read file_path
-    @parser.league_standings text: text
+    result = @parser.league_standings text: text
+
+    # TODO: add better assertions
+    assert_not_empty result
   end
 end

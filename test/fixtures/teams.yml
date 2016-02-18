@@ -1,11 +1,216 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+bruins:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Boston Bruins"
+  stats_identifier: "01"
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+sabres:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Buffalo Sabres"
+  stats_identifier: "02"
+
+wings:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Detroit Red Wings"
+  stats_identifier: "05"
+
+panthers:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Florida Panthers"
+  stats_identifier: "26"
+
+habs:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Montreal Canadiens"
+  stats_identifier: "10"
+
+senators:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Ottawa Senators"
+  stats_identifier: "14"
+
+lightning:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Tampa Bay Lightning"
+  stats_identifier: "20"
+
+leafs:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Toronto Maple Leafs"
+  stats_identifier: "21"
+
+bruins:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Atlantic"
+  name: "Boston Bruins"
+  stats_identifier: "01"
+
+canes:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "Carolina Hurricanes"
+  stats_identifier: "07"
+
+jackets:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "Columbus Blue Jackets"
+  stats_identifier: "29"
+
+devils:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "New Jersey Devils"
+  stats_identifier: "11"
+
+islanders:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "New York Islanders"
+  stats_identifier: "12"
+
+rangers:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "New York Rangers"
+  stats_identifier: "13"
+
+flyers:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "Philadelphia Flyers"
+  stats_identifier: "15"
+
+penguins:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "Pittsburgh Penguins"
+  stats_identifier: "16"
+
+caps:
+  league: "NHL"
+  conference: "Eastern"
+  division: "Metropolitan"
+  name: "Washington Capitals"
+  stats_identifier: "23"
+
+hawks:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "Chicago Blackhawks"
+  stats_identifier: "04"
+
+avalanche:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "Colorado Avalanche"
+  stats_identifier: "17"
+
+stars:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "Dallas Stars"
+  stats_identifier: "09"
+
+wild:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "Minnesota Wild"
+  stats_identifier: "30"
+
+predators:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "Nashville Predators"
+  stats_identifier: "27"
+
+blues:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "St. Louis Blues"
+  stats_identifier: "19"
+
+jets:
+  league: "NHL"
+  conference: "Western"
+  division: "Central"
+  name: "Winnipeg Jets"
+  stats_identifier: "28"
+
+ducks:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "Anaheim Ducks"
+  stats_identifier: "25"
+
+coyotes:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "Arizona Coyotes"
+  stats_identifier: "24"
+
+flames:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "Calgary Flames"
+  stats_identifier: "03"
+
+oilers:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "Edmonton Oilers"
+  stats_identifier: "06"
+
+kings:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "Los Angeles Kings"
+  stats_identifier: "08"
+
+sharks:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "San Jose Sharks"
+  stats_identifier: "18"
+
+canucks:
+  league: "NHL"
+  conference: "Western"
+  division: "Pacific"
+  name: "Vancouver Canucks"
+  stats_identifier: "22"
