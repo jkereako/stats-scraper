@@ -61,6 +61,9 @@ class NHLParser::LeagueStandings
       statistic_position += 1
     end # /each
 
+    # Push the last team on to the standings list.
+    standings.push team unless team.nil?
+
     standings
   end
 end
