@@ -17,3 +17,4 @@ class NHLParserTest < ActiveSupport::TestCase
     assert_not_empty result
   end
 end
+

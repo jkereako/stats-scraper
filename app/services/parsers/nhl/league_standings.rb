@@ -1,5 +1,4 @@
 require Rails.root.join('app', 'services', 'parsers', 'nhl', 'namespace')
-#require '../namespace.rb'
 
 # Parse the league standings for the NHL
 class NHLParser::LeagueStandings
@@ -65,3 +64,4 @@ class NHLParser::LeagueStandings
     standings
   end
 end
+
