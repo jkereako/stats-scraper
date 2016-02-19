@@ -1,5 +1,4 @@
-# This class uses an XPath to extract the information we want. The data is
-# returned as a File and the text from it will be processed elsewhere.
+# Extracts data from HTML and returns it as a plain text file.
 class NHLScraper
 
   def initialize(file:)
@@ -10,11 +9,11 @@ class NHLScraper
   def league_standings
     # This XPath works for all league standings: division, conference and
     # wildcard.
-    # //div[@id="shsStandings"]/table[2]/tbody/tr
-    @document.xpath '//div[@id="shsStandings"]/table[2]/tbody/tr'
+    @document.xpath('//div[@id="shsStandings"]/table[2]/tbody/tr').text
   end
 
   def team_roster
-    @document.xpath '//div[@id="shsNHLTeamStats"]/table[1]'
+    @document.xpath('//div[@id="shsNHLTeamStats"]/table[1]').text
   end
 end
+
