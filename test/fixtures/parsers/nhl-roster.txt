@@ -1,0 +1,199 @@
+No.
+Name
+Pos
+Ht
+Wt
+Born
+Birthplace
+
+39
+Matt Beleskey
+LW
+6-0
+203
+6/7/1988      
+Windsor, Canada
+
+37
+Patrice Bergeron
+C
+6-1
+195
+7/24/1985      
+L'Ancienne-Lorette, Canada
+
+33
+Zdeno Chara
+D
+6-9
+250
+3/18/1977      
+Trencin, Czechoslovakia
+
+14
+Brett Connolly
+RW
+6-2
+193
+5/2/1992      
+Campbell River, Canada
+
+21
+Loui Eriksson
+RW
+6-2
+183
+7/17/1985      
+Gothenburg, Sweden
+
+29
+Landon Ferraro
+C
+6-0
+186
+8/8/1991      
+Trail, Canada
+
+50
+Jonas Gustavsson
+G
+6-4
+212
+10/24/1984      
+Danderyd, Sweden
+
+11
+Jimmy Hayes
+RW
+6-5
+215
+11/21/1989      
+Boston, Massachusetts
+
+23
+Chris Kelly
+C
+6-0
+193
+11/11/1980      
+Toronto, Canada
+
+41
+Joonas Kemppainen
+LW
+6-3
+223
+4/7/1988      
+Kajaani, Finland
+
+46
+David Krejci
+C
+6-0
+186
+4/28/1986      
+Sternberk, Czechoslovakia
+
+47
+Torey Krug
+D
+5-9
+186
+4/12/1991      
+Livonia, Michigan
+
+63
+Brad Marchand
+LW
+5-9
+181
+5/11/1988      
+Halifax, Canada
+
+54
+Adam McQuaid
+D
+6-4
+212
+10/12/1986      
+Charlottetown, Canada
+
+86
+Kevan Miller
+D
+6-2
+210
+11/15/1987      
+Los Angeles, California
+
+45
+Joe Morrow
+D
+6-0
+199
+12/9/1992      
+Edmonton, Canada
+
+88
+David Pastrnak
+RW
+6-0
+181
+5/25/1996      
+Havirov, Czech Republic
+
+64
+Tyler Randell
+RW
+6-1
+198
+6/15/1991      
+Scarborough, Canada
+
+40
+Tuukka Rask
+G
+6-3
+176
+3/10/1987      
+Savonlinna, Finland
+
+36
+Zac Rinaldo
+LW
+5-11
+169
+6/15/1990      
+Mississauga, Canada
+
+44
+Dennis Seidenberg
+D
+6-1
+210
+7/18/1981      
+Schwenningen, West Germany
+
+51
+Ryan Spooner
+C
+5-11
+181
+1/30/1992      
+Ottawa, Canada
+
+25
+Max Talbot
+C
+5-11
+190
+2/11/1984      
+Lemoyne, Canada
+
+62
+Zach Trotman
+D
+6-3
+217
+8/26/1990      
+Carmel, Indiana
