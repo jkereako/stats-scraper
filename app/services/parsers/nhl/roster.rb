@@ -14,8 +14,7 @@ class NHLParser::Roster
 
   def parse
     count = 0
-    player = {'no.' => '', 'name' => '', 'pos' => '', 'ht' => '',
-              'wt' => '', 'born' => '', 'birthplace' => ''}
+    player = new_player
     players = []
 
     # Split the text by either a newline or carriage return
@@ -33,8 +32,7 @@ class NHLParser::Roster
 
         players.push player unless player.nil?
 
-        player = {'no.' => '', 'name' => '', 'pos' => '', 'ht' => '',
-                  'wt' => '', 'born' => '', 'birthplace' => ''}
+        player = new_player
       end
 
       player[HEADING[count]] = clean_line
@@ -46,6 +44,13 @@ class NHLParser::Roster
     players.push player unless player.nil?
 
     players
+  end
+
+  private
+
+  def new_player
+    {'no.' => '', 'name' => '', 'pos' => '', 'ht' => '', 'wt' => '',
+     'born' => '', 'birthplace' => ''}
   end
 end
 
