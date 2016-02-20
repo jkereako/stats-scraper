@@ -11,7 +11,6 @@ class NHLParser::RosterTest < ActiveSupport::TestCase
 
   test 'roster text parsing' do
     result = @parser.parse
-
     # We expect 24 players
     assert_equal 24, result.count
   end
