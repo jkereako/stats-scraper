@@ -2,15 +2,8 @@ require Rails.root.join('app', 'services', 'parsers', 'nhl', 'namespace')
 
 # Parse the roster for an NHL team
 class NHLParser::Roster
-  def initialize(team_identifier:, text:)
-    @team = Team.for_league('NHL').with_stats_identifier(team_identifier)
+  def initialize(text:)
     @text = text
-
-    # Raise an error if the stats identifier is not associated with a team. This
-    # would be the fault of the programmer.
-    if @team.empty?
-      raise 'Team does not exist'
-    end
   end
 
   # It was decided to use strings instead of symbols for keys because of the "."
@@ -31,30 +24,25 @@ class NHLParser::Roster
       clean_line = line.strip.downcase()
 
       # Skip the heading and nil or empty lines
-      next if HEADING.include? clean_line or clean_line.blank? or
+      next if HEADING.include? clean_line or clean_line.blank?
 
+      # If we've reached the end of the player's stats, add the player to the
+      # array of players and restart
       if count == HEADING.count
         count = 0
-        # If a team already exists, then push it onto the standings array.
+
         players.push player unless player.nil?
 
-        # Create a new team
         player = {'no.' => '', 'name' => '', 'pos' => '', 'ht' => '',
                   'wt' => '', 'born' => '', 'birthplace' => ''}
-        # Advance to the next line
       end
-
-      # Draw attention to unexpected behavior
-      #if statistic_position > STATS.count
-      #  raise "Went beyond known statistics"
-      #end
 
       player[HEADING[count]] = clean_line
 
       count += 1
     end # /each
 
-    # Push the last team on to the standings list.
+    # Push the last player on to the standings list.
     players.push player unless player.nil?
 
     players
