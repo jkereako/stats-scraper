@@ -1,5 +1,5 @@
 require 'test_helper'
-require Rails.root.join('app', 'services', 'scrapers', 'nhl_scraper')
+require Rails.root.join 'app', 'services', 'scrapers', 'nhl_scraper'
 
 class NHLScraperTest < ActiveSupport::TestCase
   FIXTURE_PATH = File.join ActiveSupport::TestCase.fixture_path, 'scrapers'
@@ -23,6 +23,19 @@ class NHLScraperTest < ActiveSupport::TestCase
     scraper = NHLScraper.new document: file
     result = scraper.team_roster
     assert_not_empty result
+  end
+
+  test 'team schedule' do
+    months = [9, 10, 11, 1, 2, 3, 4]
+
+    for month in months do
+      file = read_file File.join(
+        'schedules', "nhl-team-schedule-month-#{month}.html"
+      )
+      scraper = NHLScraper.new document: file
+      result = scraper.team_schedule
+      assert_not_empty result
+    end
   end
 
   private

@@ -25,5 +25,9 @@ class NHLScraper
     # Select the table `<table>` within `<div id="shsNHLTeamStats">`
     @document.xpath('//div[@id="shsNHLTeamStats"]/table[1]').text
   end
+
+  def team_schedule
+    @document.xpath('//div[@id="shsNHLTeamStats"]/table').text
+  end
 end
 

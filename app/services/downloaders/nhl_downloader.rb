@@ -9,14 +9,18 @@ class NHLDownloader
 
   # Download all of the team's schedules
   def team_schedule(team_identifier:)
+    # List the months with leading zeroes in the order in which they appear
+    months = ['09', '10', '11', '12', '01', '02', '03', '04']
     schedules = []
+
+    # The hockey pre-season begins in September and lasts until April, hence
+    # 4..9
+    for month in months  do
     # Print the months as numbers and pad them with zeroes. This is the format
     # which STATS expects
-    for i in  1..12 do
-      month_number = sprintf '%02d', i
       file = open team_schedule_url(league: 'nhl',
                              team_identifier: team_identifier,
-                             month_number:month_number)
+                             month_number:month)
       schedules.push file
     end
 
@@ -34,5 +38,5 @@ class NHLDownloader
   def team_transactions(team_identifier:)
     open team_transactions_url league: 'nhl', team_identifier: team_identifier
   end
-
 end
+
