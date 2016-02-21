@@ -13,8 +13,6 @@ class NHLDownloader
     months = ['09', '10', '11', '12', '01', '02', '03', '04']
     schedules = []
 
-    # The hockey pre-season begins in September and lasts until April, hence
-    # 4..9
     for month in months  do
     # Print the months as numbers and pad them with zeroes. This is the format
     # which STATS expects
