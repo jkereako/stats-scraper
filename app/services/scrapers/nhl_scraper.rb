@@ -1,4 +1,5 @@
-# Extracts data from HTML and returns it as a plain text file.
+# Extracts data from an HTML document and returns plain text. Essentially, this
+# file is a container for XPath queries.
 class NHLScraper
 
   def initialize(document:)
