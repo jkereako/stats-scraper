@@ -1,12 +1,12 @@
 require 'test_helper'
-require Rails.root.join 'app', 'services', 'parsers', 'nhl', 'roster'
+require Rails.root.join 'app', 'services', 'parsers', 'nhl', 'team_roster'
 
-class NHLParser::RosterTest < ActiveSupport::TestCase
+class NHLParser::TeamRosterTest < ActiveSupport::TestCase
 
   setup do
     @text = File.read File.join ActiveSupport::TestCase.fixture_path, 'parsers',
-    'nhl-roster.txt'
-    @parser = NHLParser::Roster.new text: @text
+    'nhl-team-roster.txt'
+    @parser = NHLParser::TeamRoster.new text: @text
   end
 
   test 'roster text parsing' do

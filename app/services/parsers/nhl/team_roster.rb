@@ -1,7 +1,7 @@
 require Rails.root.join 'app', 'services', 'parsers', 'nhl', 'namespace'
 
 # Parse the roster for an NHL team
-class NHLParser::Roster
+class NHLParser::TeamRoster
   def initialize(text:)
     @text = text
   end
