@@ -1,4 +1,4 @@
-require Rails.root.join('app', 'services', 'parsers', 'nhl', 'namespace')
+require Rails.root.join 'app', 'services', 'parsers', 'nhl', 'namespace'
 
 # Parse the league standings for the NHL
 class NHLParser::LeagueStandings
@@ -27,6 +27,10 @@ class NHLParser::LeagueStandings
     team = nil
     # Split the text by either a newline or carriage return
     @text.split( /\r?\n/ ).each do |line|
+      if count > HEADING.count
+        raise 'Index is beyond expected bounds'
+      end
+
       # Make sure the line is clean and predictable
       clean_line = line.strip.downcase()
 
@@ -53,10 +57,6 @@ class NHLParser::LeagueStandings
         next
       end
 
-      # Draw attention to unexpected behavior
-      if count > HEADING.count
-        raise "Went beyond known statistics"
-      end
 
       team[:stats][HEADING[count]] = clean_line
 

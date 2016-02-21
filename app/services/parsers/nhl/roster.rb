@@ -1,4 +1,4 @@
-require Rails.root.join('app', 'services', 'parsers', 'nhl', 'namespace')
+require Rails.root.join 'app', 'services', 'parsers', 'nhl', 'namespace'
 
 # Parse the roster for an NHL team
 class NHLParser::Roster
@@ -19,6 +19,10 @@ class NHLParser::Roster
 
     # Split the text by either a newline or carriage return
     @text.split( /\r?\n/ ).each do |line|
+      if count > HEADING.count
+        raise 'Index is beyond expected bounds'
+      end
+
       # Make sure the line is clean and predictable
       clean_line = line.strip.downcase()
 
