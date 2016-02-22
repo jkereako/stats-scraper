@@ -18,7 +18,7 @@ class NHLScraperTest < ActiveSupport::TestCase
     assert_not_empty result
   end
 
-  test 'roster' do
+  test 'team roster' do
     file = read_file 'nhl-roster.html'
     scraper = NHLScraper.new document: file
     result = scraper.team_roster
@@ -26,7 +26,7 @@ class NHLScraperTest < ActiveSupport::TestCase
   end
 
   test 'team schedule' do
-    months = [9, 10, 11, 1, 2, 3, 4]
+    months = [9, 10, 11, 12, 1, 2, 3, 4]
 
     for month in months do
       file = read_file File.join(
@@ -34,6 +34,7 @@ class NHLScraperTest < ActiveSupport::TestCase
       )
       scraper = NHLScraper.new document: file
       result = scraper.team_schedule
+
       assert_not_empty result
     end
   end
