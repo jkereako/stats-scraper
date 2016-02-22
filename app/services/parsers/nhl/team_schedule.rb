@@ -1,6 +1,7 @@
 require Rails.root.join 'app', 'services', 'parsers', 'nhl', 'namespace'
 
-# Parse the roster for an NHL team
+# Parses a file into a single object. This class is meant to be called once per
+# month schedule
 class NHLParser::TeamSchedule
   def initialize(text:)
     @text = text
@@ -8,6 +9,8 @@ class NHLParser::TeamSchedule
 
   # | Date | Opponent | Time | TV | Result |
   HEADING = [:date, :opponent, :time, :tv, :result].freeze
+  # TODO: Separate the team name from the abbreviation. Eg. "Bostonbos"
+  # TODO: Separate out GMT time from the giant string of localized timezones
 #  TEAMS = (Team.select(:name).map { |t| t.name.downcase }).freeze
   MONTHS = [:september, :october, :november, :december, :january, :february,
             :march, :april]
@@ -16,7 +19,7 @@ class NHLParser::TeamSchedule
     month = ''
     count = 0
     game = new_game
-    schedule = new_schedule
+    schedule = {}
     index = 0
     # Split the text by either a newline or carriage return
     @text.split( /\r?\n/ ).each do |line|
@@ -33,11 +36,13 @@ class NHLParser::TeamSchedule
       # See which month we're parsing
       if (index = MONTHS.index clean_line.to_sym)
         month = MONTHS[index]
+        # Since this class is intended to be invoked once per month, the scheule
+        schedule[month] = []
         next
       end
 
-      # If we've reached the end of the player's stats, add the player to the
-      # array of players and restart
+      # If we've reached the end of the known headers, start everything over
+      # once again
       if count == HEADING.count
         if month.blank?
           raise 'Month is nil or empty'

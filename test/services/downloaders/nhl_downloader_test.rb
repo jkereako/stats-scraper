@@ -12,8 +12,9 @@ class NHLDownloaderTest < ActiveSupport::TestCase
   end
 
   test 'team schedule download' do
+    schedule_months = [9, 10, 11, 12, 1, 2, 3, 4]
     result = @downloader.team_schedule team_identifier: @team_identifier
-    assert_equal 12, result.count
+    assert_equal schedule_months.count, result.count
 
     # Ensure each schedule is not nil
     result.each do |file|
