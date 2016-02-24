@@ -4,6 +4,13 @@ require Rails.root.join 'app', 'services', 'scrapers', 'nhl_scraper'
 class NHLScraperTest < ActiveSupport::TestCase
   FIXTURE_PATH = File.join ActiveSupport::TestCase.fixture_path, 'scrapers'
 
+  test 'scoreboard' do
+    file = read_file 'nhl-scoreboard.html'
+    scraper = NHLScraper.new document: file
+    result = scraper.scoreboard
+    assert_not_empty result
+  end
+
   test 'league standings' do
     file = read_file 'nhl-league-standings.html'
     scraper = NHLScraper.new document: file

@@ -6,6 +6,12 @@ class NHLScraper
     @document = Nokogiri::HTML document
   end
 
+  def scoreboard
+    @document.xpath(
+      '//div[@id="shsScoreboard"]/div[2]/div/table/tr[1]/td/table'
+    ).text
+  end
+
   # Extract the table which holds the league standings for the NHL
   def league_standings
     # Select the table rows `<tr>` within `<div id="shsStandings">`
