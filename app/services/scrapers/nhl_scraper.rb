@@ -21,6 +21,19 @@ class NHLScraper
     ).text
   end
 
+  def league_transactions
+    # This XPath query is nearly identical to `league_injuries`, the only
+    # difference is the `id` attribute.
+    #
+    # Should we extract the similarities into a helper method? While it would be
+    # good programming practice to do so, these methods are already so simple
+    # that I doubt it would have much of a benefit.
+    @document.xpath(
+      '//div[@id="shsNHLTrans"]/table[contains(concat(" ", normalize-space('\
+      '@class), " "), " shsTable ")] | //div[@id="shsNHLTrans"]/h2'
+    ).text
+  end
+
   def team_roster
     # Select the table `<table>` within `<div id="shsNHLTeamStats">`
     @document.xpath('//div[@id="shsNHLTeamStats"]/table[1]').text

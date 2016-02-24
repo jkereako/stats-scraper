@@ -18,6 +18,13 @@ class NHLScraperTest < ActiveSupport::TestCase
     assert_not_empty result
   end
 
+  test 'league transactions' do
+    file = read_file 'nhl-league-transactions.html'
+    scraper = NHLScraper.new document: file
+    result = scraper.league_transactions
+    assert_not_empty result
+  end
+
   test 'team roster' do
     file = read_file 'nhl-roster.html'
     scraper = NHLScraper.new document: file
@@ -40,6 +47,9 @@ class NHLScraperTest < ActiveSupport::TestCase
   end
 
   private
+
+  def test_helper(file_name:)
+  end
 
   def read_file(file)
     File.read File.join FIXTURE_PATH, file
